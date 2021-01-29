@@ -75,7 +75,6 @@ void TIMER1_COMPA_vect (void) {
   );
 
   if (++current_task->ticks >= current_task->priority && !task_locked) { // check if current task should switch
-TASK_SWITCH_ON_DELETE:
     current_task->stack_ptr = SP; // save current stack pointer
 
     current_task = current_task->next; // select next task

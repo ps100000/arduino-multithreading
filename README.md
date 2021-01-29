@@ -50,3 +50,6 @@ void loop() {
  + __task_func_ptr__: a function pointer to the threads main method
  + __stack_size__: the size of the stack for this thread
  + __priority__: how much ticks a thread should be allowed to run for before switching to the next one 
+## Global Variables
+ + __task_locked__ is a global bool allowing you to lock the current thread
+ + __current_task__ is a global struct of type thread_t containing the info of the current task and allows access to all existing threads by reading the other elements of the queue through the pointer `next`
