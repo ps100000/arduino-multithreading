@@ -59,7 +59,7 @@ void new_task(const void (*task_func_ptr)(), uint8_t stack_size = 32, uint8_t pr
   sei(); // enable interupts
 }
 
-// interrupt function without use of ISR macro to keep gcc from generating any additional code for it.
+// interrupt function without use of ISR macro to keep gcc from generating any additional code for it. todo: check if ISR_NAKED might also do the trick?
 extern "C" void TIMER1_COMPA_vect (void) __attribute__ ((used, externally_visible));
 void TIMER1_COMPA_vect (void) {
   cli(); // disable interupts
